@@ -8,6 +8,13 @@
       "when": 1722384521549,
       "tag": "0000_new_supreme_intelligence",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1722392968376,
+      "tag": "0001_marvelous_rick_jones",
+      "breakpoints": true
     }
   ]
 }

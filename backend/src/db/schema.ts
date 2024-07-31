@@ -8,3 +8,13 @@ export const users = sqliteTable("users", {
     .notNull()
     .default(sql`(current_timestamp)`),
 })
+
+export const tasks = sqliteTable("tasks", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
+  title: text("name").notNull(),
+  content: text("content").notNull(),
+  status: text("status", { enum: ["yet", "progress", "done"] }),
+  createdAt: text("created_at")
+    .notNull()
+    .default(sql`(current_timestamp)`),
+})
