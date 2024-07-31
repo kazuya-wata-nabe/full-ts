@@ -45,6 +45,7 @@ module.exports = {
         prefix: "@",
       },
     ],
+    "@typescript-eslint/consistent-type-definitions": ["error", "type"],
   },
   overrides: [
     {

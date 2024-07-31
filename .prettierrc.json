@@ -9,6 +9,7 @@
   "printWidth": 100,
   "trailingComma": "all",
   "importOrder": [
+    "^hono",
     "^vue",
     "^react",
     "^[a-z]\\w",
