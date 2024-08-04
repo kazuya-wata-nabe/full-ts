@@ -1,9 +1,9 @@
 import { Hono } from "hono"
 import { createFactory } from "hono/factory"
 import { serve } from "@hono/node-server"
+import { db } from "@/db"
 import { Env } from "@/types"
-import { db } from "./db"
-import { users } from "./db/schema"
+import { api } from "./routes"
 
 const factory = createFactory<Env>()
 const dbInjection = factory.createMiddleware(async (c, next) => {
@@ -14,14 +14,9 @@ const dbInjection = factory.createMiddleware(async (c, next) => {
 const app = new Hono<Env>()
 app.use(dbInjection)
 
-app.get("/", (c) => {
-  return c.text("hello hono")
-})
-
-app.get("/users", (c) => {
-  const rows = c.var.db.select().from(users).all()
-  return c.json(rows)
-})
+app.get("/", (c) => c.text("hello hono"))
+// TODO: implements auth
+app.route("/api", api)
 
 const port = 8000
 console.log(`Server is running on port ${port}`)
