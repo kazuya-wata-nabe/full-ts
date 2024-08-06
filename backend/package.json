@@ -7,7 +7,8 @@
     "db:generate": "drizzle-kit generate",
     "db:up": "drizzle-kit push",
     "db:down": "drizzle-kit drop",
-    "db:show": "drizzle-kit studio"
+    "db:show": "drizzle-kit studio",
+    "test": "vitest --config vitest.config.ts"
   },
   "dependencies": {
     "@hono/node-server": "^1.12.0",
@@ -19,7 +20,8 @@
     "@types/better-sqlite3": "^7.6.11",
     "@types/node": "^20.11.17",
     "drizzle-kit": "^0.23.0",
-    "tsx": "^4.7.1"
+    "tsx": "^4.7.1",
+    "vitest": "^2.0.5"
   },
   "volta": {
     "node": "20.16.0"
